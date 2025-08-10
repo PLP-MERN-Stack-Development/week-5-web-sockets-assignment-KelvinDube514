@@ -1,78 +1,234 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=20017326&assignment_repo_type=AssignmentRepo)
-# Real-Time Chat Application with Socket.io
+# TrendNet - Fashion-Focused Real-Time Chat Application
 
-This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
+![TrendNet Logo](TrendNet\client\src\assets\TrendNet2.png)
 
-## Assignment Overview
+TrendNet is a modern, real-time chat application specifically designed for fashion enthusiasts, influencers, and style communities. Built with React, Socket.IO, and Node.js, it provides a dynamic platform for fashion discussions, trend sharing, and community engagement.
 
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
+## 🌟 Features
 
-## Project Structure
+### Core Chat Functionality
+- **Real-time messaging** with Socket.IO for instant communication
+- **Multiple chat rooms** dedicated to fashion topics:
+  - `general` - General fashion discussions
+  - `fashion` - Latest fashion trends
+  - `style` - Personal styling tips
+  - `outfits` - Outfit inspiration and sharing
+  - `trending-fashion` - Hot topics and viral trends
+- **Direct messaging** between users
+- **Message history** with scroll-to-load functionality
+- **Typing indicators** to show when users are composing messages
+- **Read receipts** to track message delivery status
 
-```
-socketio-chat/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # UI components
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   ├── socket/         # Socket.io client setup
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Node.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Socket event handlers
-│   ├── models/             # Data models
-│   ├── socket/             # Socket.io server setup
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+### Media Sharing
+- **Image and video sharing** with drag-and-drop support
+- **Rich media previews** for fashion content
+- **File upload capabilities** for sharing outfit photos and style inspiration
+- **Optimized media handling** with proper MIME type detection
 
-## Getting Started
+### User Experience
+- **User authentication** with JWT tokens
+- **User presence indicators** showing who's online
+- **Real-time notifications** with browser notifications and sound alerts
+- **Message reactions** with emoji support
+- **Search functionality** to find specific messages or content
+- **Responsive design** that works on desktop and mobile devices
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+### AI-Powered Fashion Bots
+- **18 AI fashion influencers** with unique personalities and expertise
+- **Automated fashion discussions** across different topics
+- **Bot interactions** that respond to user messages and DMs
+- **Fashion trend insights** and style recommendations
+- **Engaging conversations** that keep the community active
 
-## Files Included
+### Advanced Features
+- **Message persistence** with in-memory storage (demo mode)
+- **Connection management** with automatic reconnection
+- **Error handling** and graceful degradation
+- **Performance optimization** with efficient message handling
+- **Cross-platform compatibility** with modern browsers
 
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
+## 🚀 Getting Started
 
-## Requirements
-
+### Prerequisites
 - Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Basic understanding of React and Express
+- npm, yarn, or pnpm package manager
+- Modern web browser with WebSocket support
 
-## Submission
+### Installation
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd week-5-web-sockets-assignment-KelvinDube514
+   ```
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+2. **Install server dependencies**
+   ```bash
+   cd TrendNet/server
+   npm install
+   ```
 
-## Resources
+3. **Install client dependencies**
+   ```bash
+   cd ../client
+   npm install
+   ```
 
-- [Socket.io Documentation](https://socket.io/docs/v4/)
-- [React Documentation](https://react.dev/)
-- [Express.js Documentation](https://expressjs.com/)
-- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat) 
+### Running the Application
+
+1. **Start the server** (from `TrendNet/server` directory)
+   ```bash
+   npm run dev
+   ```
+   The server will start on `http://localhost:3001`
+
+2. **Start the client** (from `TrendNet/client` directory)
+   ```bash
+   npm run dev
+   ```
+   The client will start on `http://localhost:5173`
+
+3. **Access the application**
+   - Open your browser and navigate to `http://localhost:5173`
+   - Enter a username to start chatting
+   - Join different fashion rooms and interact with AI fashion bots
+
+## 🏗️ Project Structure
+
+```
+TrendNet/
+├── client/                 # React frontend application
+│   ├── public/            # Static assets
+│   │   └── TrendNet.png   # Application logo
+│   ├── src/
+│   │   ├── assets/        # Fashion media assets (images, videos)
+│   │   ├── components/    # React components
+│   │   │   ├── Aurora.jsx # UI component
+│   │   │   └── Layout.jsx # Main layout component
+│   │   ├── App.jsx        # Main application component
+│   │   ├── Chat.jsx       # Chat interface component
+│   │   ├── Login.jsx      # Authentication component
+│   │   ├── Profile.jsx    # User profile component
+│   │   ├── participants.js # Bot user definitions
+│   │   └── main.jsx       # Application entry point
+│   ├── package.json       # Client dependencies
+│   └── vite.config.js     # Vite configuration
+├── server/                # Node.js backend server
+│   ├── server.js          # Main server file with Socket.IO setup
+│   ├── botManager.js      # AI fashion bot management
+│   └── package.json       # Server dependencies
+└── README.md              # Project documentation
+```
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **React 19** - Modern React with hooks and functional components
+- **Socket.IO Client** - Real-time communication
+- **React Router DOM** - Client-side routing
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Fast build tool and development server
+
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web framework
+- **Socket.IO** - Real-time bidirectional communication
+- **CORS** - Cross-origin resource sharing
+- **JWT** - JSON Web Tokens for authentication
+
+### Key Libraries
+- **socket.io-client** - Client-side Socket.IO implementation
+- **react-router-dom** - React routing
+- **jwt-decode** - JWT token decoding
+- **ogl** - WebGL graphics library for advanced UI effects
+
+## 🎨 Fashion Bot Personalities
+
+The application features 18 AI-powered fashion influencers, each with unique personalities:
+
+- **@Addison_Jane** - Modern minimalist style expert
+- **@Aisha_Cairo** - Middle Eastern fashion and cultural fusion
+- **@Bella_Boho** - Bohemian and free-spirited fashion
+- **@Breezy_Bea** - Summer and beach fashion specialist
+- **@Brooklyn_May** - Urban street style and NYC fashion
+- **@Carmen_Rio** - Latin American fashion and vibrant styles
+- **@Chloe_Chic** - Classic and sophisticated fashion
+- **@Evelyn_May** - Vintage and retro fashion enthusiast
+- **@Foxy_Fiona** - Bold and daring fashion choices
+- **@Glam_Gigi** - Glamorous and red carpet fashion
+- **@Grace_Glimpse** - Elegant and refined style
+- **@Isabella_Madrid** - European fashion and sophistication
+- **@Lily_Luxe** - Luxury and high-end fashion
+- **@Luna_Belle** - Ethereal and dreamy fashion
+- **@Lush_Lina** - Sustainable and eco-friendly fashion
+- **@LuxeLane_Official** - Official fashion brand account
+- **@Miyabi_K** - Japanese and Asian fashion trends
+- **@Pixie_Pat** - Whimsical and creative fashion
+
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env` file in the server directory:
+```env
+PORT=3001
+NODE_ENV=development
+```
+
+### Socket.IO Configuration
+- **Namespace**: `/chat` for all chat functionality
+- **Authentication**: JWT token-based authentication
+- **Transports**: WebSocket with polling fallback
+- **CORS**: Configured for development and production
+
+## 📱 Usage
+
+### Joining the Chat
+1. Enter a username on the login screen
+2. Choose from predefined fashion chat rooms
+3. Start chatting with other users and AI fashion bots
+
+### Sharing Content
+- **Text messages**: Type and send instantly
+- **Media files**: Drag and drop images/videos or use the file picker
+- **Reactions**: Click the reaction button on messages to add emojis
+
+### Navigation
+- **Room switching**: Click on different room names to switch conversations
+- **Direct messages**: Click on user names to start private conversations
+- **Search**: Use the search bar to find specific messages or content
+
+## 🚀 Deployment
+
+### Development
+- Both client and server run in development mode with hot reloading
+- Server runs on port 3001, client on port 5173
+- Real-time updates and debugging enabled
+
+### Production
+- Build the client: `npm run build` in the client directory
+- Serve static files from the server
+- Configure environment variables for production
+- Set up proper CORS and security headers
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is part of a WebSocket assignment and is intended for educational purposes.
+
+## 🙏 Acknowledgments
+
+- Socket.IO team for the excellent real-time communication library
+- React team for the powerful frontend framework
+- Fashion community for inspiration and feedback
+- All contributors and testers
+
+---
+
+**TrendNet** - Where fashion meets technology in real-time conversations! 👗✨ 
